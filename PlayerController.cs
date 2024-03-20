@@ -18,5 +18,8 @@ public float speed = 10.0f;
     {
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        if (Input.GetKeyDown(KeyCode.Space)){
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
     }
 }
